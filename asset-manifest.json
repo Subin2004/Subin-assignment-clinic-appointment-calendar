@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Subin-assignment-clinic-appointment-calendar/static/css/main.47a21eca.css",
+    "main.js": "/Subin-assignment-clinic-appointment-calendar/static/js/main.3c659fec.js",
+    "index.html": "/Subin-assignment-clinic-appointment-calendar/index.html",
+    "main.47a21eca.css.map": "/Subin-assignment-clinic-appointment-calendar/static/css/main.47a21eca.css.map",
+    "main.3c659fec.js.map": "/Subin-assignment-clinic-appointment-calendar/static/js/main.3c659fec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47a21eca.css",
+    "static/js/main.3c659fec.js"
+  ]
+}
