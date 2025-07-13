@@ -1,0 +1,538 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Login */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.login-container form div {
+  margin-bottom: 15px;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.9em;
+}
+
+/* Calendar Container */
+.calendar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Month View */
+.month-view {
+  display: none;
+}
+
+.month-view h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-cell {
+  min-height: 100px;
+  border: 1px solid #e0e0e0;
+  padding: 5px;
+  border-radius: 4px;
+  background: white;
+}
+
+.day-cell.other-month {
+  background: #f9f9f9;
+  color: #aaa;
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.appointments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.appointment-badge {
+  background: #e3f2fd;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.appointment-badge:hover {
+  background: #bbdefb;
+}
+
+.patient-name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.appointment-time {
+  color: #555;
+  margin-left: 5px;
+}
+
+/* Day View */
+.day-view {
+  display: block;
+}
+
+.day-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.day-navigation input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.day-navigation button {
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-appointment-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-appointment-btn:hover {
+  background-color: #0b7dda;
+}
+
+.appointments-list {
+  margin-top: 20px;
+}
+
+.appointment-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: white;
+}
+
+.appointment-actions {
+  margin-top: 10px;
+}
+
+.appointment-actions button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.appointment-actions button:hover {
+  background: #e0e0e0;
+}
+
+/* Form Modal */
+.form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.appointment-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.appointment-form h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-actions button[type="button"] {
+  background: #f0f0f0;
+}
+
+.form-actions button[type="submit"] {
+  background: #4CAF50;
+  color: white;
+}
+
+.form-actions button[type="submit"]:hover {
+  background: #45a049;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .month-view {
+    display: block;
+  }
+  .day-view {
+    display: none;
+  }
+}
+/* Add these new styles at the end of your existing CSS */
+
+/* Confirmation Dialog */
+.confirm-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.confirm-dialog {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.confirm-dialog p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.confirm-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  padding: 8px 16px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #e0e0e0;
+}
+
+.confirm-btn:hover {
+  background: #d32f2f;
+}
+
+/* Appointment Card Styles */
+.appointment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.appointment-card:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.appointment-info {
+  flex-grow: 1;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  padding: 6px 12px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+  background: #0b7dda;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+/* Calendar Header Styles */
+.calendar-header {
+  margin-bottom: 20px;
+}
+
+.desktop-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-navigation {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.month-year-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0;
+}
+
+.month-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: white;
+}
+
+.year-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 80px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Weekday Headers */
+.weekday-header {
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-navigation {
+    display: none;
+  }
+  
+  .mobile-navigation {
+    display: flex;
+  }
+  
+  .mobile-navigation button {
+    padding: 8px 12px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .mobile-navigation span {
+    font-weight: 500;
+  }
+} 
+/* Dark Mode Styles */
+.dark-mode {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --border-color: #333;
+}
+
+.dark-mode .login-container,
+.dark-mode .calendar-container,
+.dark-mode .appointment-form,
+.dark-mode .appointment-card,
+.dark-mode .day-cell {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode .appointment-badge {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+.dark-mode .appointment-badge {
+  background-color: #2d3748;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.app-container {
+  transition: all 0.3s ease;
+}
